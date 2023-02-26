@@ -45,4 +45,4 @@ class Engine:
         
         self.logger.info(commande)
 
-        # os.system(commande)
+        os.system(commande)
