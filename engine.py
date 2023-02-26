@@ -6,7 +6,7 @@ class Engine:
         self.logger.debug(args)
         self.name = args.name
         self.command = 'scp -rP'
-        logger.debug("Recuperation des variables d'environnement")
+        self.logger.debug("Recuperation des variables d'environnement")
         self.port = os.getenv('NAS_PORT') 
         self.account = os.getenv('NAS_LOGIN')
         self.ip = os.getenv('NAS_IP')
@@ -17,14 +17,14 @@ class Engine:
         elif args.serie == True :
             self.type = 'Series'
         else :
-            logger.error('Il faut spécifier le type de contenu (--film ou --serie)')
+            self.logger.error('Il faut spécifier le type de contenu (--film ou --serie)')
             return 1
 
 
     def run(self):
         ext = os.path.splitext(self.name)[1]
-        if ext not in ['.avi', '.mp4']:
-            logger.debug("Ajout automatique de l'extension .mkv")
+        if self.type == 'Films' and ext not in ['.avi', '.mp4']:
+            self.logger.debug("Ajout automatique de l'extension .mkv")
             self.name += '.mkv'
         self.name = self.name.replace(' ', '\ ').replace('(', '\(').replace(')', '\)').replace(')', '\)').replace('\'', '\\\'')
 
@@ -43,6 +43,6 @@ class Engine:
         commande += '\" '
         commande += self.destination
         
-        logger.info(commande)
+        self.logger.info(commande)
 
-        os.system(commande)
+        # os.system(commande)
