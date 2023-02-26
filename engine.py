@@ -6,6 +6,7 @@ class Engine:
         self.logger.debug(args)
         self.name = args.name
         self.command = 'scp -rP'
+        logger.debug("Recuperation des variables d'environnement")
         self.port = os.getenv('NAS_PORT') 
         self.account = os.getenv('NAS_LOGIN')
         self.ip = os.getenv('NAS_IP')
@@ -23,6 +24,7 @@ class Engine:
     def run(self):
         ext = os.path.splitext(self.name)[1]
         if ext not in ['.avi', '.mp4']:
+            logger.debug("Ajout automatique de l'extension .mkv")
             self.name += '.mkv'
         self.name = self.name.replace(' ', '\ ').replace('(', '\(').replace(')', '\)').replace(')', '\)').replace('\'', '\\\'')
 
@@ -40,6 +42,6 @@ class Engine:
         commande += self.name
         commande += '\" '
         commande += self.destination
-        print(commande) 
+        logger.info(commande)
 
         os.system(commande)
