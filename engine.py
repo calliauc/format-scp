@@ -42,4 +42,4 @@ class Engine:
         commande += self.destination
         print(commande) 
 
-        # os.system(commande)
+        os.system(commande)
