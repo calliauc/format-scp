@@ -40,6 +40,5 @@ class Engine:
         commande += self.name
         commande += '\" '
         commande += self.destination
-        print(commande) 
 
         os.system(commande)
