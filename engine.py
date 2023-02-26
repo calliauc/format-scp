@@ -7,9 +7,10 @@ class Engine:
         self.name = args.name
         self.command = 'scp -rP'
         self.port = args.port
-        self.account = 'admin'
-        self.ip = '192.168.0.63'
-        self.path = '/share/CACHEDEV1_DATA/Data/'
+        self.port = os.getenv('NAS_PORT') 
+        self.account = os.getenv('NAS_LOGIN')
+        self.ip = os.getenv('NAS_IP')
+        self.path = os.getenv('NAS_PATH')
         self.destination = args.destination
         if args.film == True :
             self.type = 'Films'
@@ -24,7 +25,7 @@ class Engine:
 
 
     def run(self):
-        self.name = self.name.replace(' ', '\ ').replace('(', '\(').replace(')', '\)')
+        self.name = self.name.replace(' ', '\ ').replace('(', '\(').replace(')', '\)').replace(')', '\)').replace('\'', '\\\'')
 
         commande = self.command
         commande += ' '
