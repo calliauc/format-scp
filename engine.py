@@ -6,7 +6,6 @@ class Engine:
         self.logger.debug(args)
         self.name = args.name
         self.command = 'scp -rP'
-        self.port = args.port
         self.port = os.getenv('NAS_PORT') 
         self.account = os.getenv('NAS_LOGIN')
         self.ip = os.getenv('NAS_IP')
