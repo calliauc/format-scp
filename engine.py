@@ -21,6 +21,9 @@ class Engine:
 
 
     def run(self):
+        ext = os.path.splitext(self.name)[1]
+        if ext not in ['.avi', '.mp4']:
+            self.name += '.mkv'
         self.name = self.name.replace(' ', '\ ').replace('(', '\(').replace(')', '\)').replace(')', '\)').replace('\'', '\\\'')
 
         commande = self.command
@@ -37,7 +40,6 @@ class Engine:
         commande += self.name
         commande += '\" '
         commande += self.destination
-        commande += ' '
         print(commande) 
 
-        os.system(commande)
+        # os.system(commande)
