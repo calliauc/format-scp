@@ -19,6 +19,6 @@ Le principal intérêt reste le fomatage du nom, l'ajout des antislash.
 
 Pour le film "Truc le film (2023).mkv"
 
-Ecrire la commande `python3 main.py -f -n "Truc le film (2023)`
+Ecrire la commande `python3 main.py -f -n "Truc le film (2023)"`
 
 Lancera la commande `scp -rP 22 account@192.168.0.50:/media/data/Films/"Truc\ le\ film\ \(2023\).mkv" .`
