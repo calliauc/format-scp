@@ -18,9 +18,6 @@ class Engine:
         else :
             logger.error('Il faut spécifier le type de contenu (--film ou --serie)')
             return 1
-        
-
-
 
 
     def run(self):
@@ -44,4 +41,3 @@ class Engine:
         print(commande) 
 
         os.system(commande)
-
