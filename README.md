@@ -4,16 +4,20 @@ C'est pensé pour récupérer des films et series sur mon nas, donc faudra adapt
 
 ## Explication et cofiguration
 
-Configurer des variables d'environnement pour la cible scp
-export NAS_LOGIN="account"
-export NAS_IP="192.168.0.50"
-export NAS_PATH="/media/data"
-export NAS_PORT="22"
+Configurer des variables d'environnement pour la cible scp (oui c'est des valeurs random, pas ma config locale)
+- export NAS_LOGIN="account"
+- export NAS_IP="192.168.0.50"
+- export NAS_PATH="/media/data"
+- export NAS_PORT="22"
 
-Lancer le script avec le paramètre -f ou -s pour recup un film ou une serie (propre à mon nas, faudra éditer dans le code)
+Lancer le script avec le paramètre -f (pour recupérer un film) ou -s (pour recupérer une serie) (propre à mon nas, faudra éditer dans le code)
+
 Et enfin -n "nom" pour le nom du fichier ou répertoire à récupérer
+
 Le script ajoute automatiquement .mkv dans certains cas, encore une fois c'est propre à mon usage
+
 Le principal intérêt reste le fomatage du nom, l'ajout des antislash.
+
 
 ## Exemple d'utilisation
 
