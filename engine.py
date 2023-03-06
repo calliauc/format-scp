@@ -12,6 +12,8 @@ class Engine:
         self.ip = os.getenv('NAS_IP')
         self.path = os.getenv('NAS_PATH')
         self.destination = args.destination
+        self.auto = args.auto
+        self.rep = args.rep
         if args.film == True :
             self.type = 'Films'
         elif args.serie == True :
@@ -23,7 +25,7 @@ class Engine:
 
     def run(self):
         ext = os.path.splitext(self.name)[1]
-        if self.type == 'Films' and ext not in ['.avi', '.mp4']:
+        if self.auto and self.type == 'Films' and ext not in ['.avi', '.mp4']:
             self.logger.debug("Ajout automatique de l'extension .mkv")
             self.name += '.mkv'
         self.name = self.name.replace(' ', '\ ').replace('(', '\(').replace(')', '\)').replace(')', '\)').replace('\'', '\\\'')
