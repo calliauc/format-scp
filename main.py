@@ -12,8 +12,8 @@ type_group = parser.add_mutually_exclusive_group()
 type_group.add_argument("-f", "--film", help="Récupère un film", action="store_true")
 type_group.add_argument("-s", "--serie", help="Récupère une série", action="store_true")
 
-parser.add_argument("-a", "-auto", help="Ajoute automatiquement l'extension .mkv au nom", action="store_true")
-parser.add_argument("-r", "-rep", help="Recupère un repertoire au lieu d'un fichier", action="store_true")
+parser.add_argument("-a", "--auto", help="Ajoute automatiquement l'extension .mkv au nom", action="store_true")
+parser.add_argument("-r", "--rep", help="Recupère un repertoire au lieu d'un fichier", action="store_true")
 
 parser.add_argument("-n", "--name", help="Le nom du fichier ou du répertoire à récupérer", type=str)
 parser.add_argument("-d", "--destination", help="Repertoire local de destination", type=str, default='.')
